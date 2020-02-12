@@ -1,0 +1,60 @@
+Cloning "https://github.com/bbalakriz/DO180-apps" ...
+	Commit:	f7cd8963ef353d9173c3a21dcccf402f3616840b (Initial commit, including all apps previously in course)
+	Author:	Jordi Sola <someth2say@gmail.com>
+	Date:	Fri Oct 4 13:04:03 2019 +0200
+Caching blobs under "/var/cache/blobs".
+Getting image source signatures
+Copying blob sha256:1d2c4ce43b78cb9a97ede7f19ad1406a43ee50532568bda660193e4a404b424f
+Copying blob sha256:f1e961fe4c5192ab9f8e241a2efc674779623ac6a3ed49ee9a1a5b3b8425fe0d
+Copying blob sha256:1c9f515fc6ab2b7ebfcaffd8af681b68869d78a3b19c69e87c296363ab1bc2fe
+Copying blob sha256:d5d526ce008fc835b6ef4c958941bb319a52baa20dbe5fbd34941340f1826549
+Copying blob sha256:85da247eae42192a3cb668e661cddcbb37c21e3671f3440046fa1c83d6252071
+Copying config sha256:530b95a8d0ccbd254031399000e90eb6e2305afa69b6109ae6c2c86aa61e935a
+Writing manifest to image destination
+Storing signatures
+Generating dockerfile with builder image image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9b8717af4e840c3f24ed84271d119991a0c4fe3fa6890921500e0ff07dae7dbb
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9b8717af4e840c3f24ed84271d119991a0c4fe3fa6890921500e0ff07dae7dbb
+STEP 2: LABEL "io.openshift.build.source-location"="https://github.com/bbalakriz/DO180-apps" "io.openshift.build.source-context-dir"="php-helloworld" "io.openshift.build.image"="image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9b8717af4e840c3f24ed84271d119991a0c4fe3fa6890921500e0ff07dae7dbb" "io.openshift.build.commit.author"="Jordi Sola <someth2say@gmail.com>" "io.openshift.build.commit.date"="Fri Oct 4 13:04:03 2019 +0200" "io.openshift.build.commit.id"="f7cd8963ef353d9173c3a21dcccf402f3616840b" "io.openshift.build.commit.ref"="s2i" "io.openshift.build.commit.message"="Initial commit, including all apps previously in course"
+STEP 3: ENV OPENSHIFT_BUILD_NAME="php-helloworld-1" OPENSHIFT_BUILD_NAMESPACE="bbalasub-redhat-com-s2i" OPENSHIFT_BUILD_SOURCE="https://github.com/bbalakriz/DO180-apps" OPENSHIFT_BUILD_REFERENCE="s2i" OPENSHIFT_BUILD_COMMIT="f7cd8963ef353d9173c3a21dcccf402f3616840b"
+STEP 4: USER root
+STEP 5: COPY upload/src /tmp/src
+STEP 6: RUN chown -R 1001:0 /tmp/src
+time="2020-02-12T07:06:35Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah542352926/mnt/rootfs\": error checking if \"/tmp/buildah542352926/mnt/rootfs/sys/fs/cgroup/freezer\" is mounted: no such file or directory"
+time="2020-02-12T07:06:35Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah542352926/mnt/rootfs\": error checking if \"/tmp/buildah542352926/mnt/rootfs/sys/fs/cgroup/freezer\" is mounted: no such file or directory"
+STEP 7: USER 1001
+STEP 8: RUN /usr/libexec/s2i/assemble
+---> Installing application source...
+=> sourcing 20-copy-config.sh ...
+---> 07:06:38     Processing additional arbitrary httpd configuration provided by s2i ...
+=> sourcing 00-documentroot.conf ...
+=> sourcing 50-mpm-tuning.conf ...
+=> sourcing 40-ssl-certs.sh ...
+time="2020-02-12T07:06:38Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah451150851/mnt/rootfs\": error checking if \"/tmp/buildah451150851/mnt/rootfs/sys/fs/cgroup/freezer\" is mounted: no such file or directory"
+time="2020-02-12T07:06:38Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah451150851/mnt/rootfs\": error checking if \"/tmp/buildah451150851/mnt/rootfs/sys/fs/cgroup/freezer\" is mounted: no such file or directory"
+STEP 9: CMD /usr/libexec/s2i/run
+STEP 10: COMMIT temp.builder.openshift.io/bbalasub-redhat-com-s2i/php-helloworld-1:1c59d874
+Getting image source signatures
+Copying blob sha256:2cab4440f9070965c8454792eee4b122bce5939cc6d21e554469f01e71712a89
+Copying blob sha256:64f2bd9f473b0ae150f07dc65aafb90beeec7ebaa722625055cb8c1ddede0b09
+Copying blob sha256:682be05d59b268579900963a5bfd91689d6823d0b9c111c61fd3fb979972d7eb
+Copying blob sha256:90224af393b129486d98a722cac85a9bd3ee0d6d44a5c1d4a3d4e77b44277bda
+Copying blob sha256:fe5fb9f10563ca22b1d093025951d0e691de18dfe8d78f614bf25318f56db920
+Copying blob sha256:0ff9df11f1e8f3007f2b8e5f2843f3a031b05aa74acbd1ed9cf2403654db4759
+Copying config sha256:92f10a0349c6ff6ec46e64f9179ed4c8eaff6eabc93ee6bffc81515fcddbcbd7
+Writing manifest to image destination
+Storing signatures
+92f10a0349c6ff6ec46e64f9179ed4c8eaff6eabc93ee6bffc81515fcddbcbd7
+
+Pushing image image-registry.openshift-image-registry.svc:5000/bbalasub-redhat-com-s2i/php-helloworld:latest ...
+Getting image source signatures
+Copying blob sha256:0ff9df11f1e8f3007f2b8e5f2843f3a031b05aa74acbd1ed9cf2403654db4759
+Copying blob sha256:f1e961fe4c5192ab9f8e241a2efc674779623ac6a3ed49ee9a1a5b3b8425fe0d
+Copying blob sha256:85da247eae42192a3cb668e661cddcbb37c21e3671f3440046fa1c83d6252071
+Copying blob sha256:d5d526ce008fc835b6ef4c958941bb319a52baa20dbe5fbd34941340f1826549
+Copying blob sha256:1d2c4ce43b78cb9a97ede7f19ad1406a43ee50532568bda660193e4a404b424f
+Copying blob sha256:1c9f515fc6ab2b7ebfcaffd8af681b68869d78a3b19c69e87c296363ab1bc2fe
+Copying config sha256:92f10a0349c6ff6ec46e64f9179ed4c8eaff6eabc93ee6bffc81515fcddbcbd7
+Writing manifest to image destination
+Storing signatures
+Successfully pushed image-registry.openshift-image-registry.svc:5000/bbalasub-redhat-com-s2i/php-helloworld@sha256:1adeacee27f1cce8473d99ea031846a7e8ccedbbdcef5bcc6ca1c3865a7717e8
+Push successful
